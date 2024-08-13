@@ -1,0 +1,94 @@
+/* Import the custom font */
+@font-face {
+    font-family: 'Intensa_Fuente';
+    src: url('assets/font/intensa_fuente/Intensa_Fuente.ttf') format('truetype');
+}
+
+/* Apply styles to .skill-content */
+.skill-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    background-color: transparent; /* Ensure the background is transparent to see the colors behind */
+    position: relative; /* Make this element the reference for absolute positioning */
+    margin: 0; /* Remove margin to avoid gaps */
+    padding: 0; /* Remove padding to avoid gaps */
+}
+
+.skill-content::before,
+.skill-content::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 50%;
+    z-index: -1; /* Ensure they stay behind the content */
+}
+
+.skill-content::before {
+    top: 0;
+    background-color: yellow; /* Top half color */
+}
+
+.skill-content::after {
+    bottom: 0;
+    background-color: blue; /* Bottom half color */
+}
+
+/* Ensure the sections stack correctly with no gaps */
+section {
+    padding: 0; /* Remove padding */
+    margin: 0; /* Remove margin */
+}
+
+/* Optionally, add some padding inside the sections for content spacing */
+.skill-content > * {
+    padding: 20px; /* Adjust as needed for content spacing */
+}
+
+#skill {
+    width: 50%;
+}
+
+#skill_list {
+    width: 50%;
+}
+
+/* Style for the skill heading */
+#skill h1 {
+    font-family: 'Intensa_Fuente', sans-serif; /* Use the custom font */
+    font-size: 2.5em; /* Adjust the font size as needed */
+    color: #333; /* Text color */
+    text-align: center; /* Center align the text */
+    margin: 0; /* Remove default margin */
+    padding: 10px; /* Add padding for spacing */
+    border-radius: 10px; /* Rounded corners */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Text shadow for better visibility */
+}
+
+/* Style for the skill list */
+#skill_list ul {
+    list-style-type: none; /* Remove default list styling */
+    padding: 0; /* Remove default padding */
+    margin: 0; /* Remove default margin */
+    display: flexbox; /* Use flexbox for horizontal layout */
+    justify-content: center; /* Center the list items horizontally */
+    gap: 20px; /* Add space between list items */
+}
+
+#skill_list li {
+    margin: 10px;
+    font-family: 'Intensa_Fuente', sans-serif; /* Use the custom font */
+    font-size: 1.5em; /* Adjust the font size as needed */
+    color: #fff; /* Text color */
+    background-color: #007BFF; /* Background color */
+    padding: 10px 20px; /* Padding for spacing */
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s; /* Smooth transition for background color */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8); /* Text shadow for better visibility */
+}
+
+#skill_list li:hover {
+    background-color: #0056b3; /* Darker background on hover */
+}

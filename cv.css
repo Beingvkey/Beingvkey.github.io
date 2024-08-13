@@ -1,0 +1,73 @@
+/* Import the custom font */
+@font-face {
+    font-family: 'Intensa_Fuente';
+    src: url('assets/font/intensa_fuente/Intensa_Fuente.ttf') format('truetype');
+}
+
+/* Apply styles to .cv-content */
+.cv-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: transparent; /* Ensure the background is transparent to see the colors behind */
+    position: relative; /* Make this element the reference for absolute positioning */
+    margin: 0; /* Remove margin to avoid gaps */
+    padding: 0; /* Remove padding to avoid gaps */
+}
+
+.cv-content::before,
+.cv-content::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 50%;
+    z-index: -1; /* Ensure they stay behind the content */
+}
+
+.cv-content::before {
+    top: 0;
+    background-color: whitesmoke; /* Top half color */
+}
+
+.cv-content::after {
+    bottom: 0;
+    background-color: #99ff33; /* Bottom half color */
+}
+
+/* Ensure the sections stack correctly with no gaps */
+section {
+    padding: 0; /* Remove padding */
+    margin: 0; /* Remove margin */
+}
+
+/* Optionally, add some padding inside the sections for content spacing */
+.cv-content > * {
+    padding: 20px; /* Adjust as needed for content spacing */
+}
+.button_slide {
+    background-color: whitesmoke;
+    color: black;
+    border: 2px solid #99ff33;
+    border-radius: 50%; /* Make the button circular */
+    padding: 18px; /* Ensure equal padding for width and height */
+    width: 72px; /* Set width equal to height for circular shape */
+    height: 72px; /* Set height to make the button circular */
+    display: inline-block;
+    font-family: "Lucida Console", Monaco, monospace;
+    font-size: 32px;
+    font-weight: bolder;
+    letter-spacing: 1px;
+    cursor: pointer;
+    box-shadow: inset 0 0 0 0 #99ff33;
+    -webkit-transition: ease-out 0.4s;
+    -moz-transition: ease-out 0.4s;
+    transition: ease-out 0.4s;
+    text-align: center; /* Center the text horizontally */
+    line-height: 36px; /* Center the text vertically */
+}
+.slide_down:hover {
+    box-shadow: inset 0 100px 0 0 #99ff33;
+    border: 2px solid whitesmoke;
+}

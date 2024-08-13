@@ -1,0 +1,101 @@
+/* Import the custom font */
+@font-face {
+    font-family: 'Intensa_Fuente';
+    src: url('assets/font/intensa_fuente/Intensa_Fuente.ttf') format('truetype');
+}
+
+
+/* Apply styles to .cv-content */
+.contact-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    background-color: transparent; /* Ensure the background is transparent to see the colors behind */
+    position: relative; /* Make this element the reference for absolute positioning */
+    margin: 0; /* Remove margin to avoid gaps */
+    padding: 0; /* Remove padding to avoid gaps */
+}
+
+.contact-content::before,
+.contact-content::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 50%;
+    z-index: -1; /* Ensure they stay behind the content */
+}
+
+.contact-content::before {
+    top: 0;
+    background-color: #99ff33; /* Top half color */
+}
+
+.contact-content::after {
+    bottom: 0;
+    background-color: aqua; /* Bottom half color */
+}
+
+
+/* Style for the contact image container */
+#contact-img {
+    margin-left: 150px; /* Space between image and form */
+}
+
+#contact-img img {
+    max-width: 100%; /* Ensure the image scales properly */
+    height: auto; /* Maintain aspect ratio */
+}
+
+/* Style for the contact card container */
+#contact-card {
+    margin-right: 150px;
+    background-color: white; /* Card background color */
+    padding: 20px; /* Padding inside the card */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    width: 400px;
+}
+
+/* Style for the heading */
+.contact-content h1 {
+    margin-bottom: 20px; /* Add space below the header */
+    font-size: 24px; /* Larger heading size */
+}
+
+/* Style for the form */
+.contact-content form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 400px; /* Limit the maximum width of the form */
+}
+
+.contact-content input,
+.contact-content textarea {
+    margin-bottom: 15px; /* Space between inputs */
+    padding: 10px; /* Padding inside inputs */
+    font-size: 16px; /* Larger text size */
+    border: 1px solid #ccc; /* Light border */
+    border-radius: 5px; /* Rounded corners */
+}
+
+.contact-content textarea {
+    resize: vertical; /* Allow vertical resize */
+    min-height: 100px; /* Minimum height for textarea */
+}
+
+.contact-content button {
+    padding: 10px 20px; /* Padding inside button */
+    font-size: 16px; /* Larger text size */
+    background-color: #007BFF; /* Blue background */
+    color: #fff; /* White text */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+}
+
+.contact-content button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}

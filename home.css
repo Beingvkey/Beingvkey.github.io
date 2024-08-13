@@ -1,0 +1,64 @@
+/* Import the custom font */
+@font-face {
+    font-family: 'Intensa_Fuente';
+    src: url('assets/font/intensa_fuente/Intensa_Fuente.ttf') format('truetype');
+}
+
+/* Apply styles to .home-content */
+.home-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    background-color: transparent; /* Ensure the background is transparent to see the colors behind */
+    position: relative; /* Make this element the reference for absolute positioning */
+}
+
+.home-content::before,
+.home-content::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 50%;
+    z-index: -1; /* Ensure they stay behind the content */
+}
+
+.home-content::before {
+    top: 0;
+    background-color: aqua; /* Top half color */
+}
+
+.home-content::after {
+    bottom: 0;
+    background-color: yellow; /* Bottom half color */
+}
+
+#wish {
+    padding-left: 100px;
+}
+
+#wish h1 {
+    margin: 0;
+    padding-bottom: 0; /* Adjust this value as needed */
+    font-family: 'Intensa_Fuente'; /* Apply the custom font */
+}
+
+#wish p {
+    margin: 0;
+    padding-top: 0; /* Adjust this value as needed */
+}
+
+#image {
+    padding-right: 15%;
+    
+}
+
+#image img {
+    width: 300px; /* Set the width of the image */
+    height: 300px; /* Ensure the height is the same as width to make it a square */
+    border-radius:  50%; /* Make the image circular */
+    object-fit: cover; /* Ensure the image covers the area without distortion */
+    border : 10px solid blue;
+    
+}
